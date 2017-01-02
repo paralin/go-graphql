@@ -10,14 +10,14 @@ import (
 )
 
 type Author struct {
-	ID            int           `json:"id"`
-	Name          string        `json:"name"`
-	IsPublished   string        `json:"isPublished"`
-	Author        *Author       `json:"author"`
-	Title         string        `json:"title"`
-	Body          string        `json:"body"`
-	keywords      []interface{} `json:"keywords"`
-	RecentArticle *Article      `json:"recentArticle"`
+	ID            int     `json:"id"`
+	Name          string  `json:"name"`
+	IsPublished   string  `json:"isPublished"`
+	Author        *Author `json:"author"`
+	Title         string  `json:"title"`
+	Body          string  `json:"body"`
+	keywords      []interface{}
+	RecentArticle *Article `json:"recentArticle"`
 }
 
 type Image struct {
@@ -3392,9 +3392,9 @@ func TestExecutor(t *testing.T) {
 						"deserializedValue": nil,
 					},
 					"errors": []map[string]interface{}{
-						map[string]interface{}{
+						{
 							"locations": []map[string]interface{}{
-								map[string]interface{}{
+								{
 									"line":   3,
 									"column": 13,
 								},
@@ -3501,9 +3501,9 @@ func TestExecutor(t *testing.T) {
 						"deserializedValue": nil,
 					},
 					"errors": []map[string]interface{}{
-						map[string]interface{}{
+						{
 							"locations": []map[string]interface{}{
-								map[string]interface{}{
+								{
 									"line":   3,
 									"column": 11,
 								},
